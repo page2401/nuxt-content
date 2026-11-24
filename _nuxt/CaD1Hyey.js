@@ -1,0 +1,1 @@
+import{G as e,M as t,q as n}from"#entry";import{t as r}from"./BDNMzG2s.js";var i={},a={class:`nc-feature-grid`};function o(r,i){return e(),t(`div`,a,[n(r.$slots,`default`)])}var s=Object.assign(r(i,[[`render`,o]]),{__name:`FeatureGrid`});export{s as default};

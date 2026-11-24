@@ -1,0 +1,1 @@
+import{E as e,G as t,I as n,M as r,N as i,ot as a,q as o,st as s}from"#entry";var c=Object.assign(n({__name:`Badge`,props:{type:{default:`tip`},text:{default:``}},setup(n){return(c,l)=>(t(),r(`span`,{class:a([`nc-badge`,`nc-badge--${n.type}`])},[n.text?(t(),r(e,{key:0},[i(s(n.text),1)],64)):o(c.$slots,`default`,{},void 0,void 0,1)],2))}}),{__name:`Badge`});export{c as default};
