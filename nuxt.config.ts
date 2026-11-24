@@ -49,6 +49,7 @@ export default defineNuxtConfig({
             'vue',
             'bash',
             'json',
+            'diff',
             'html',
             'css'
           ]
@@ -66,7 +67,8 @@ export default defineNuxtConfig({
         '/03-math',
         '/04-directory',
         '/04-directory/nested/01-order-and-url',
-        '/04-directory/nested/02-sidebar-sync'
+        '/04-directory/nested/02-sidebar-sync',
+        '/05-code-blocks'
       ]
     }
   }
