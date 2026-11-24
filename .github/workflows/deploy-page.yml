@@ -1,0 +1,47 @@
+name: Deploy Nuxt Content v3 to page branch
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-nuxt-content
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install exact dependencies
+        run: npm ci
+
+      - name: Generate Nuxt Content static site
+        env:
+          BASE_PATH: /nuxt-content/
+        run: npm run build
+
+      - name: Ensure .nojekyll exists in .output/public
+        run: touch .output/public/.nojekyll
+
+      - name: Publish static output to orphan page branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .output/public
+          publish_branch: page
+          force_orphan: true
+          commit_message: "deploy(page): build from ${{ github.sha }}"

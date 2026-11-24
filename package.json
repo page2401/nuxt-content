@@ -1,0 +1,23 @@
+{
+  "name": "@page2401/nuxt-content",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/content": "3.17.0",
+    "better-sqlite3": "13.2.0",
+    "katex": "0.19.1",
+    "mermaid": "12.3.0",
+    "nuxt": "4.7.0",
+    "rehype-katex": "7.0.1",
+    "remark-math": "6.0.0",
+    "vue": "3.5.46",
+    "vue-router": "5.5.1"
+  }
+}
